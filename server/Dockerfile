@@ -1,4 +1,4 @@
-FROM node:17-slim as be
+FROM node:latest
 WORKDIR /usr/app
 
 # Install dependencies and build the project.
@@ -9,3 +9,6 @@ RUN npm run build
 
 # Run the web service on container startup.
 CMD ["node", "dist/server.js"]
+
+
+#docker build -t be .    
