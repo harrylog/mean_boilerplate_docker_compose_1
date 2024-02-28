@@ -10,10 +10,10 @@ spec:
   template:
     metadata:
       labels:
-        app: frontend
+        app: client
     spec:
       containers:
-        - name: frontend
+        - name: fe
           image: fe
           ports:
-            - containerPort: 8080
+            - containerPort: 4200

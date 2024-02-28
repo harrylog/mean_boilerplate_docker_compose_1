@@ -7,6 +7,6 @@ spec:
     app: server
   ports:
     - protocol: TCP
-      port: 8080
+      port: 5200
       targetPort: 5200
-  type: ClusterIP
+  type: NodePort
