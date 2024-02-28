@@ -6,6 +6,7 @@ services:
     #   context: ./client
     #   dockerfile: ./Dockerfile
     image: fe
+    container_name: fe
     ports:
       - "8080:8080"
 
@@ -14,6 +15,7 @@ services:
 
   backend:
     image: be
+    container_name: be
     # build:
     #   context: ./server
     #   dockerfile: ./Dockerfile
