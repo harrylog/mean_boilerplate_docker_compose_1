@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:latest as be
 WORKDIR /usr/app
 
 # Install dependencies and build the project.
