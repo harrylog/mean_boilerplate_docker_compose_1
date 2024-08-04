@@ -1,4 +1,4 @@
-FROM node:17-slim AS build
+FROM node:latest AS fe
 
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
@@ -11,9 +11,13 @@ COPY . .
 RUN npm run build --prod
 
 # Configure the nginx web server
-FROM nginx:1.17.1-alpine
+FROM nginx:latest
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /usr/src/app/dist/client /usr/share/nginx/html
+COPY --from=fe /usr/src/app/dist/client /usr/share/nginx/html
 
 # Run the web service on container startup.
 CMD ["nginx", "-g", "daemon off;"]
+
+
+
+#docker build -t fe .    
